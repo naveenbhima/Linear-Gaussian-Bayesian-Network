@@ -1,5 +1,6 @@
 # Linear-Gaussian-Bayesian-Network
-In this work, parameters for continuous random variables will be learnt from its continuous parents for a Linear Gaussian Bayesian Network
+#In this work, parameters for continuous random variables will be learnt from its continuous parents for a Linear Gaussian Bayesian #Network
+
 k = int(input("Enter value of k"))
 X=[]
 B=[]
@@ -17,13 +18,9 @@ def LinearGaussianCPD(k):
         for i in range(k):
             final_list.append(sum(np.multiply(temp_list,parent_matrix[:,i]))/k)
     print(final_list)
-    
     A = np.array(final_list)
-    
     inv_A = np.linalg.inv(A)
-    
     coeff = np.linalg.inv(A).dot(B)
-    
     print(coeff)
     
 LinearGaussianCPD(k) 
